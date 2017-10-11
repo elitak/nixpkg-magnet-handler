@@ -38,8 +38,7 @@ let
         ''cmd+="rm /tmp/''${tor@Q}; "''
       }
 
-      ssh ${remoteHost} "$cmd" <"$url"
-      rm "$url"
+      ssh ${remoteHost} "$cmd" <"$url" && rm -f "$url"
     fi
 
     # Handle magnet URI
